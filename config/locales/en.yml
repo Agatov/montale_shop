@@ -3,3 +3,12 @@
 
 en:
   hello: "Hello world"
+
+
+  activerecord:
+    enums:
+      item:              # the Model, as User.class.name.underscore
+        sexes:         # pluralized version of :gender
+          unisex: Унисекс
+          male: Мужской
+          female: Женский

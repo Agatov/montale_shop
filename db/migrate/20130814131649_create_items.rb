@@ -4,8 +4,8 @@ class CreateItems < ActiveRecord::Migration
       t.integer :brand_id
       t.string :original_name
       t.string :russian_name
-      t.string :about
-      t.integer :sex
+      t.text :about
+      t.integer :sex_cd
       t.string :image
       t.integer :price, default: 0
       t.boolean :in_stock, default: 1

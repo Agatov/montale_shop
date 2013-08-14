@@ -1,0 +1,14 @@
+= simple_form_for item, url: url, html: {class: 'form-vertical'} do |f|
+  = f.input :original_name
+  = f.input :russian_name
+  = f.select :sex, Item.sexes_for_select
+  = f.input :price
+  = f.input :about
+  = f.input :image
+  = image_tag item.image_url(:thumb) if item.image?
+  = f.input :in_stock
+  = f.input :hidden
+  .form-actions
+    = f.submit 'Готово', class: 'btn'
+
+    = link_to 'Удалить', admin_item_path(item), method: :delete, class: ['btn', 'btn-danger'] if item.id?

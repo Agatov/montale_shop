@@ -1,0 +1,27 @@
+!!! 5
+%html
+  %head
+    = csrf_meta_tags
+    = stylesheet_link_tag    'admin', :media => 'all'
+    = javascript_include_tag 'admin'
+  %body
+    .wrapper
+      .navbar.navbar-fixed-top
+        .navbar-inner
+          .container
+            %a.brand{href: admin_items_path}
+              ADMIN
+            %ul.nav
+              %li.divider-vertical
+              %li{class: params['controller'] == 'admin/items' ? 'active' : ''}
+                = link_to 'Товары', admin_items_path
+
+
+
+
+      .container#main
+        .row
+          .span12
+            = yield
+            = yield :scripts
+      .push

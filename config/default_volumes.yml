@@ -1,0 +1,10 @@
+montale:
+  v1:
+    volume: 100
+    price: 4400
+  v2:
+    volume: 50
+    price: 3200
+  v3:
+    volume: 20
+    price: 1250
