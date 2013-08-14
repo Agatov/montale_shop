@@ -8,7 +8,7 @@ class CreateItems < ActiveRecord::Migration
       t.integer :sex
       t.string :image
       t.integer :price, default: 0
-      t.boolean :in_stock, default: 0
+      t.boolean :in_stock, default: 1
       t.boolean :hidden, default: 0
 
       t.timestamps

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  item_id: 1
+  volume: 1
+  price: 1
+  in_stock: false
+  hidden: false
+
+two:
+  item_id: 1
+  volume: 1
+  price: 1
+  in_stock: false
+  hidden: false
