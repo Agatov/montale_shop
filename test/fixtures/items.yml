@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  brand_id: 1
+  original_name: MyString
+  russian_name: MyString
+  image: MyString
+  price: 1
+  about: MyString
+  in_stock: false
+  hidden: false
+
+two:
+  brand_id: 1
+  original_name: MyString
+  russian_name: MyString
+  image: MyString
+  price: 1
+  about: MyString
+  in_stock: false
+  hidden: false
