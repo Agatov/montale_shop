@@ -27,9 +27,13 @@ gem 'acts_as_api'
 gem 'flash_cookie_session'
 
 gem 'capistrano'
-gem 'unicorn'
 gem 'httparty'
 gem 'russian'
 gem 'meta-tags', :require => 'meta_tags'
+
+gem 'kgio', '2.7.4'
+gem 'raindrops', '0.10.0'
+gem 'unicorn', '4.5.0'
+gem 'httparty'
 
 
