@@ -1,5 +1,6 @@
 class Item < ActiveRecord::Base
   attr_accessible :about, :brand_id, :hidden, :image, :in_stock, :original_name, :price, :russian_name, :sex_cd, :sex
+  attr_accessible :family_id, :top_notes, :middle_notes, :lower_notes
 
   has_many :volumes
   belongs_to :family
