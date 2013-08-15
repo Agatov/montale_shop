@@ -1,9 +1,15 @@
 = simple_form_for item, url: url, html: {class: 'form-vertical'} do |f|
+
+
   = f.input :original_name
   = f.input :russian_name
+  = f.association :family
   = f.select :sex, Item.sexes_for_select
   = f.input :price
   = f.input :about
+  = f.input :top_notes
+  = f.input :middle_notes
+  = f.input :lower_notes
   = f.input :image
   = image_tag item.image_url(:thumb) if item.image?
   = f.input :in_stock

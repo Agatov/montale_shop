@@ -20,4 +20,8 @@ en:
         hidden: Не показывать
         image: Картинка
         about: Описание
+        top_notes: Верхние ноты
+        middle_notes: Средние ноты
+        lower_notes: Нижние ноты
+        family: Семейство
 

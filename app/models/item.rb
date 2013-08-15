@@ -2,6 +2,7 @@ class Item < ActiveRecord::Base
   attr_accessible :about, :brand_id, :hidden, :image, :in_stock, :original_name, :price, :russian_name, :sex_cd, :sex
 
   has_many :volumes
+  belongs_to :family
   after_create :create_default_volumes
 
   as_enum :sex, [:unisex, :male, :female], prefix: true
