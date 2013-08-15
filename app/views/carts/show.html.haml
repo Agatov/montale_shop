@@ -1,0 +1,57 @@
+.wrapper
+  - if get_cart.count > 0
+    #cart-list
+
+      .header
+        Ваша корзина
+      %table.cart-list
+        - @volumes.each do |volume|
+          %tr
+            %td
+              = "Montale #{volume.item.original_name}"
+              парфюмированная вода
+
+            %td.volume
+              = "#{volume.volume.to_s} мл"
+
+
+            %td
+              = get_cart.find_volume(volume)[:count].to_s
+
+
+            %td.price
+              = "#{get_cart.find_volume(volume)[:summ].to_s},00 рублей"
+
+            %td.button
+              .remove-from-cart{volume_id: volume.id}
+                Удалить
+
+        %tr.last
+          %td{style: 'text-align: right'}
+            Итого:
+          %td
+          %td
+            = "#{get_cart.count.to_s}"
+          %td.price
+            = "#{get_cart.summ.to_s},00 рублей"
+          %td
+
+
+      .buttons
+        .clear-cart
+          Очистить корзину
+
+        .make-order#make-order
+          Оформить заказ
+
+- if get_cart.count > 0
+  #cart-empty{style: 'display: none'}
+    .wrapper
+      .header
+        Ваша Корзина Пуста
+- else
+  #cart-empty
+
+    .wrapper
+      .header
+        Ваша Корзина Пуста

@@ -1,0 +1,35 @@
+#banner
+  .wrapper
+    .offer
+      Montale со скидкой 30% до
+      %span.red 19 августа
+
+    .about
+      Оставьте заявку, чтобы получить скидку 30% на всю линию ароматов Montale
+
+    .top-form
+      %input{type: :text, name: 'username', placeholder: 'Введите ваше имя'}
+      %input{type: :text, name: 'phone', placeholder: 'Введите ваш номер телефона'}
+      .button#order-button
+        Получить скидку 30%
+
+
+#catalog
+  .catalog-header
+    Ароматы Montale
+  .wrapper
+    .items
+      -  @items.each do |item|
+        .item
+          .image
+            %a{href: item_path(item.id)}
+              = image_tag item.image_url(:thumb)
+          .info
+            %a.name{href: item_path(item.id)}
+              = item.original_name
+            .sex
+              Унисекс
+            .price
+              от
+              %span.pink 1250
+              рублей

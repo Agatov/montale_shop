@@ -1,0 +1,119 @@
+#cart
+  width: 100%
+  height: 30px
+  line-height: 30px
+  position: fixed
+  top: 80px
+  background: #f46b49
+  cursor: pointer
+  font-size: 14px
+
+  text-align: center
+  color: #fff
+
+
+
+#cart-list
+  padding-top: 50px
+  .header
+    width: 100%
+    height: 50px
+    border-bottom: 1px solid #ddd
+    line-height: 50px
+    font-size: 32px
+    font-weight: 200
+
+  table
+    margin-top: 25px
+
+    tr
+      height: 60px
+      line-height: 60px
+      background: #fafafa
+      &:nth-child(2n)
+        background: #f0f0f0
+      &.last
+        background: #fff
+
+      td
+        padding: 0 10px
+
+        &.price
+          width: 200px
+          text-align: center
+          font-weight: bold
+
+        &.volume
+          width: 130px
+
+        .remove-from-cart
+          background: #be1e2a
+          text-shadow: 0 1px 0 #be1e2a
+          width: 90px
+          height: 20px
+          line-height: 20px
+          color: #fff
+          font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif
+          font-size: 14px
+          text-align: center
+          -webkit-transition: all, 0.15s
+          border-radius: 3px
+          cursor: pointer
+
+          &:hover
+            background: #173068
+
+
+.buttons
+  margin-top: 25px
+  height: 100px
+  .clear-cart
+    float: right
+    margin-left: 30px
+    background: #be1e2a
+    text-shadow: 0 1px 0 #be1e2a
+    width: 200px
+    height: 45px
+    line-height: 45px
+    color: #fff
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif
+    font-size: 18px
+    text-align: center
+    -webkit-transition: all, 0.15s
+    border-radius: 3px
+    cursor: pointer
+
+    &:hover
+      background: #173068
+
+
+  .make-order
+    float: right
+    margin-left: 30px
+    background: #7bc674
+    text-shadow: 0 1px 0 #7bc674
+    width: 200px
+    height: 45px
+    line-height: 45px
+    color: #fff
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif
+    font-size: 18px
+    text-align: center
+    -webkit-transition: all, 0.15s
+    border-radius: 3px
+    cursor: pointer
+
+    &:hover
+      background: #fdb255
+
+
+#cart-empty
+  padding-top: 50px
+  min-height: 800px
+  .header
+    width: 100%
+    height: 50px
+    border-bottom: 1px solid #ddd
+    line-height: 50px
+    font-size: 32px
+    font-weight: 200

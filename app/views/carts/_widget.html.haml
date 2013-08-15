@@ -1,0 +1,10 @@
+- if get_cart.count == 0
+  %a#cart{href: cart_path, style: 'display: none'}
+- else
+  %a#cart{href: cart_path}
+    В вашей корзине
+    = get_cart.count.to_s
+    товара на сумму
+    = get_cart.summ.to_s
+    рублей.
+    Нажмите сюда, чтобы оформить заказ.

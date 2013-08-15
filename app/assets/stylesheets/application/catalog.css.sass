@@ -1,0 +1,65 @@
+#catalog
+
+  .catalog-header
+    font-size: 24px
+    font-weight: 200
+    text-align: center
+    height: 100px
+    line-height: 100px
+
+.items
+  padding: 30px 0
+  &:after
+    clear: both
+    content: "."
+    display: block
+    height: 0
+    clear: both
+    visibility: hidde
+
+
+  .item
+    float: left
+    width: 210px
+    height: 280px
+    margin-right: 20px
+    margin-bottom: 40px
+    border: 1px solid #fff
+    border-radius: 5px
+
+    &:hover
+      border: 1px solid #eee
+
+    .image
+      width: 120px
+      height: 180px
+      margin: 0px auto
+
+    .info
+      padding: 10px
+      margin-top: 10px
+      text-align: center
+
+      .name
+        text-align: center
+        font-size: 15px
+        line-height: 1.5
+        font-weight: bold
+        text-decoration: none
+        color: #000
+
+        &:hover
+          text-decoration: underline
+
+      .sex
+        text-align: center
+        font-size: 13px
+        line-height: 1.5
+        color: #777
+
+      .price
+        text-align: center
+        line-height: 1.5
+
+        .pink
+          color: deeppink

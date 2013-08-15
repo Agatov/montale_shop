@@ -1,0 +1,35 @@
+.wrapper
+  #item
+    .header
+      .name
+        Montale
+        = @item.original_name
+      .sex
+        Унисекс
+
+    .info
+      .image
+        = image_tag @item.image_url(:mini)
+
+      .about
+        = @item.about.gsub(/\n/, '<br />').html_safe
+
+
+    .volumes-grid
+      %table
+        - @item.volumes.each do |volume|
+          %tr
+            %td
+              = "Montale #{@item.original_name}"
+              парфюмированная вода
+
+            %td.volume
+              = "#{volume.volume.to_s} мл"
+
+
+            %td.price
+              = "#{volume.price.to_s},00 рублей"
+
+            %td.button
+              .add-to-cart{volume_id: volume.id}
+                В Корзину
