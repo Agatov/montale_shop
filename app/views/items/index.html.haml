@@ -23,7 +23,7 @@
         .item
           .image
             %a{href: item_path(item.id)}
-              -#= image_tag item.image_url(:thumb)
+              = image_tag item.image_url(:thumb)
           .info
             %a.name{href: item_path(item.id)}
               = item.original_name
