@@ -1,6 +1,11 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.order(:id)
+    if params[:family_id]
+      @items = Item.where(family_id: params[:family_id]).order(:id)
+    else
+      @items = Item.order(:id)
+    end
+
   end
 
   def show

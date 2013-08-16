@@ -14,10 +14,33 @@
         Получить скидку 30%
 
 
-#catalog
+#catalog{name: 'catalog'}
   .catalog-header
     Ароматы Montale
+
+
   .wrapper
+    .catalog-filter
+      Семейство ароматов:
+
+      %ul.families
+        %li
+          - if params[:family_id]
+            - class_value = ''
+          - else
+            - class_value = 'selected'
+          = link_to 'Все', root_path(anchor: 'catalog'), class: class_value
+        - Family.order(:id).each do |family|
+          %li
+            - if params[:family_id]
+              - if params[:family_id] == family.id.to_s
+                - class_value = 'selected'
+              - else
+                - class_value = ''
+            - else
+              - class_value = ''
+            = link_to family.name, root_path(family_id: family.id, anchor: 'catalog'), class: class_value
+
     .items
       -  @items.each do |item|
         .item
