@@ -14,5 +14,7 @@ Shop::Application.routes.draw do
     post :remove, on: :collection
   end
 
-  resource :orders, only: :create
+  resource :orders, only: :create do
+    post :fast, on: :collection
+  end
 end

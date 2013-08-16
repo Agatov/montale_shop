@@ -7,11 +7,14 @@
 
     .name
       float: left
-      width: 600px
+      width: 860px
       height: 50px
       line-height: 50px
       font-size: 32px
       font-weight: 200
+
+      a
+        color: #777
 
     .sex
       float: right
@@ -25,18 +28,36 @@
   .info
     width: 100%
     margin-top: 50px
+    &:after
+      clear: both
+      content: "."
+      display: block
+      height: 0
+      clear: both
+      visibility: hidden
 
-    .image
+    .left
       float: left
       width: 300px
-      height: 400px
 
-    .about
+      .order-by-phone
+        margin-top: 25px
+        font-size: 18px
+        line-height: 36px
+        border: 1px solid #eee
+        border-radius: 3px
+        padding-left: 20px
+        .label
+          font-size: 20px
+        .phone-number
+
+          font-size: 24px
+
+    .right
       float: right
       padding: 0px
       margin: 0px
-      width: 600px
-      height: 400px
+      width: 640px
 
       font-size: 16px
       line-height: 1.5
@@ -44,6 +65,15 @@
 
 
   .volumes-grid
+    margin-top: 50px
+
+    .header
+      width: 100%
+      height: 50px
+      line-height: 50px
+      font-size: 24px
+      border-bottom: 1px solid #ddd
+      margin-bottom: 25px
     tr
       height: 60px
       line-height: 60px
@@ -58,6 +88,11 @@
           width: 200px
           text-align: center
           font-weight: bold
+
+          .old-price
+            text-decoration: line-through
+            font-weight: 400
+            color: #777
 
         &.volume
           width: 130px
@@ -78,3 +113,131 @@
 
           &:hover
             background: #173068
+
+
+.perfume-aromate
+  width: 640px
+  height: 120px
+  float: right
+  margin-top: 30px
+  font-weight: 400
+  &:after
+    clear: both
+    content: "."
+    display: block
+    height: 0
+    clear: both
+    visibility: hidden
+
+  .aromate
+    float: left
+    width: 180px
+    height: 70px
+    border-right: 1px solid #eee
+    padding-top: 10px
+    padding-right: 15px
+    margin-right: 15px
+    font-size: 14px
+    line-height: 1.3
+    &.last
+      border-right: none
+
+    span
+      font-size: 20px
+      line-height: 2
+      color: #8f8f8f
+
+
+.triggers
+  margin-top: 50px
+  width: 960px
+  &:after
+    clear: both
+    content: "."
+    display: block
+    height: 0
+    clear: both
+    visibility: hidden
+
+  .trigger
+    float: left
+    width: 219px
+    height: 130px
+    margin-right: 20px
+    font-size: 14px
+    line-height: 1.3
+    color: #555
+    border-right: 1px solid #eee
+
+    &.last
+      border-right: none
+
+
+    span
+      width: 208px
+      display: block
+      font-size: 18px
+      line-height: 2
+      color: #fff
+      text-align: center
+      border-radius: 3px
+      background: #7bc674
+
+
+.fast-order
+  margin-top: 50px
+  &:after
+    clear: both
+    content: "."
+    display: block
+    height: 0
+    clear: both
+    visibility: hidden
+  .header
+    width: 100%
+    height: 50px
+    line-height: 50px
+    font-size: 24px
+    border-bottom: 1px solid #ddd
+    margin-bottom: 25px
+
+
+  .left
+    float: left
+    width: 300px
+
+    .about-fast-order
+      font-size: 15px
+      line-height: 1.3
+
+  .right
+    float: right
+    width: 600px
+
+    .fast-order-form
+      input
+        width: 260px
+        height: 40px
+        border: 1px solid #ccc
+        font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif
+        font-size: 16px
+        padding: 0px 15px
+        margin-bottom: 25px
+        border-radius: 3px
+
+      button
+        background: #be1e2a
+        width: 150px
+        height: 40px
+        color: #fff
+        font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif
+        font-size: 16px
+        text-align: center
+        -webkit-transition: all, 0.15s
+        border: none
+        border-radius: 3px
+        cursor: pointer
+        margin-left: 20px
+
+        &:hover
+          background: #173068

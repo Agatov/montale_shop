@@ -4,6 +4,8 @@
     = csrf_meta_tags
     = stylesheet_link_tag    'application', :media => 'all'
     = javascript_include_tag 'application'
+    %link{rel: :icon, type: 'image/vnd.microsoft.ico', href: '/assets/favicon.ico?11111'}
+    %link{rel: 'shortcut icon', type: 'image/x-icon', href: '/assets/favicon.ico?11111'}
     %title
       Montale
   %body
@@ -45,8 +47,8 @@
         .to-do
           Чтобы оформить заказ, оставьте ваши контактные данные. Мы свяжемся с вами в течение пары часов.
         .form
-          %input{type: :text, name: :username1, placeholder: 'Введите ваше имя'}
-          %input{type: :text, name: :phone1, placeholder: 'Введите ваш телефон'}
+          %input{type: :text, name: :username, placeholder: 'Введите ваше имя'}
+          %input{type: :text, name: :phone, placeholder: 'Введите ваш телефон'}
           %button#order-button
             Оформить заказ
 

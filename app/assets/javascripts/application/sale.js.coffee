@@ -11,26 +11,26 @@ $ ->
 
   $('#order-button').bind 'click', ->
 
-    name = $(@).parent().find('input[name=username1]')
+    name = $(@).parent().find('input[name=username]')
     if name.val().length < 2
       name.css 'border', '1px solid red'
       return false
     else
-      name.css 'border', 'none'
+      name.css 'border', '1px solid #ddd'
 
-    phone = $(@).parent().find('input[name=phone1]')
+    phone = $(@).parent().find('input[name=phone]')
     if phone.val().length < 7
       phone.css 'border', '1px solid red'
       return false
     else
-      name.css 'border', 'none'
+      name.css 'border', '1px solid #ddd'
 
 
 
     $('.modal-overlay').bind 'click', ->
       hide_thank_you()
 
-    $.post '/orders', {'order[username]': $('input[name=username1]').val(), 'order[phone]': $('input[name=phone1]').val()}, (data) =>
+    $.post '/orders', {'order[username]': $('input[name=username]').val(), 'order[phone]': $('input[name=phone]').val()}, (data) =>
 
     $('.modal-overlay').unbind 'click'
     $('.modal-overlay').bind 'click', ->
