@@ -1,0 +1,18 @@
+%legend
+  Список брэндов
+  %a.btn{href: new_admin_brand_path, style: 'float: right'}
+    Добавить
+
+%table.table
+  %thead
+    %th
+      Название
+    %th
+      = '...'
+  %tbody
+    - @brands.each do |brand|
+      %tr
+        %td
+          = brand.name
+        %td
+          = link_to 'Редактировать', edit_admin_brand_path(brand)

@@ -5,6 +5,7 @@ Shop::Application.routes.draw do
   namespace :admin do
     resources :items
     resources :volumes
+    resources :brands
   end
 
   resources :items, only: [:index, :show]

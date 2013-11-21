@@ -59,7 +59,7 @@
 
     .volumes-grid
       .header
-        Цены с учетом скидки 20% до 19 августа
+        Цены на этот аромат
       %table
         - @item.volumes.each do |volume|
           %tr
@@ -72,8 +72,6 @@
 
 
             %td.price
-              %span.old-price #{(volume.price / 0.8).round.to_s}
-              &nbsp;
               = "#{volume.price.to_s},00 рублей"
 
             %td.button

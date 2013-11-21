@@ -1,0 +1,6 @@
+= simple_form_for brand, url: url, html: {class: 'form-vertical'} do |f|
+
+  = f.input :name
+  .form-actions
+    = f.submit 'Готово', class: 'btn'
+    = link_to 'Удалить', admin_brand_path(brand), method: :delete, class: ['btn', 'btn-danger'] if brand.id?
