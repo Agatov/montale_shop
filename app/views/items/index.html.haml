@@ -45,14 +45,10 @@
       -  @items.each do |item|
         .item
           .image
-            %a{href: item_path(item.id)}
+            %a{href: "/montale/#{item.index}"}
               = image_tag item.image_url(:thumb)
           .info
             %a.name{href: item_path(item.id)}
               = item.original_name
             .sex
               Унисекс
-            .price
-              от
-              %span.pink 1250
-              рублей

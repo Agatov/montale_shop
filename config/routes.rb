@@ -1,6 +1,8 @@
 Shop::Application.routes.draw do
 
   root to: 'items#index'
+  get '/montale', to: 'items#index'
+  get ':brand_name/:item_name', to: 'items#show'
 
   namespace :admin do
     resources :items

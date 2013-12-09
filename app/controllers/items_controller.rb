@@ -9,6 +9,10 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find params[:id]
+    #@item = Item.find params[:id]
+
+    if params[:item_name]
+      @item = Item.find_by_index params[:item_name]
+    end
   end
 end
