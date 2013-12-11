@@ -1,14 +1,18 @@
 Shop::Application.routes.draw do
 
+
+
+  namespace :admin do
+    resources :items do
+      resources :prices
+    end
+
+    resources :brands
+  end
+
   root to: 'items#index'
   get '/montale', to: 'items#index'
   get ':brand_name/:item_name', to: 'items#show'
-
-  namespace :admin do
-    resources :items
-    resources :volumes
-    resources :brands
-  end
 
   resources :items, only: [:index, :show]
 

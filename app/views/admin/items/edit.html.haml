@@ -1,4 +1,12 @@
-%legend
-  Редактировать товар
+%ol.breadcrumb
+  %li
+    = link_to 'Все брэнды', admin_brands_path
+    = '/'
+  %li
+    = link_to @item.brand.name, admin_brand_path(@item.brand), class: :active
+    = '/'
+  %li.active
+    = @item.original_name
+
 
 = render partial: 'admin/items/form', locals: {item: @item, url: admin_item_path(@item)}

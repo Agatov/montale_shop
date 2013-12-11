@@ -3,25 +3,4 @@
   %a.btn{href: new_admin_item_path, style: 'float: right'}
     Добавить
 
-
-%table.table
-  %thead
-    %th
-      Оригинальное название
-    %th
-      Русское название
-    %th
-      Цена
-    %th
-      = '...'
-  %tbody
-    - @items.each do |item|
-      %tr
-        %td
-          = item.original_name
-        %td
-          = item.russian_name
-        %td
-          = item.price.to_s
-        %td
-          = link_to 'Редактировать', edit_admin_item_path(item)
+= render partial: 'admin/items/list', locals: {items: @items}

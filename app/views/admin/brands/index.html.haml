@@ -8,7 +8,7 @@
     %th
       Название
     %th
-      = '...'
+    %th
   %tbody
     - @brands.each do |brand|
       %tr
@@ -16,3 +16,5 @@
           = brand.name
         %td
           = link_to 'Редактировать', edit_admin_brand_path(brand)
+        %td
+          = link_to 'Ароматы', admin_brand_path(brand)

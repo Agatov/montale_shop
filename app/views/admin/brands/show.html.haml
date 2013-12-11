@@ -1,0 +1,15 @@
+
+
+%ol.breadcrumb
+  %li
+    = link_to 'Все брэнды', admin_brands_path
+    = '/'
+  %li.active
+    = @brand.name
+  %li{style: 'float: right;'}
+    %a.btn-small{href: new_admin_item_path(brand_id: @brand.id)} Добавить аромат
+
+
+
+
+= render partial: 'admin/items/list', locals: {items: @brand.items}

@@ -48,7 +48,7 @@
             %a{href: "/montale/#{item.index}"}
               = image_tag item.image_url(:thumb)
           .info
-            %a.name{href: item_path(item.id)}
+            %a.name{href: "/montale/#{item.index}"}
               = item.original_name
             .sex
               Унисекс

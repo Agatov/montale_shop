@@ -1,5 +1,7 @@
 class Admin::VolumesController < Admin::AdminController
+
   def index
+
   end
 
   def show

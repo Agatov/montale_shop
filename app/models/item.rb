@@ -5,7 +5,9 @@ class Item < ActiveRecord::Base
 
   has_many :volumes
   belongs_to :family
+  belongs_to :brand
   after_create :create_default_volumes
+  after_create :create_index
 
   as_enum :sex, [:unisex, :male, :female], prefix: true
   mount_uploader :image, ItemImageUploader
@@ -23,6 +25,11 @@ class Item < ActiveRecord::Base
       volume.price = montale_volumes[v]['price']
       volume.save
     end
+  end
 
+
+  def create_index
+    self.index = self.original_name.downcase.grep(' ', '-').grep('&','-and-').grep('\'', '')
+    self.save
   end
 end

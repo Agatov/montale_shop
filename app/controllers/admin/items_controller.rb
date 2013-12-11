@@ -7,14 +7,15 @@ class Admin::ItemsController < Admin::AdminController
   end
 
   def new
-    @item = Item.new
+    @item = Item.new(brand_id: params[:brand_id])
+
   end
 
   def create
     @item = Item.new params[:item]
 
     if @item.save
-      redirect_to admin_items_path
+      redirect_to admin_brand_path(@item.brand)
     else
       render :new
     end

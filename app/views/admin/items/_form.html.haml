@@ -3,6 +3,7 @@
 
   = f.input :original_name
   = f.input :russian_name
+  = f.association :brand
   = f.association :family
   = f.select :sex, Item.sexes_for_select
   = f.input :price

@@ -3,6 +3,11 @@ class Admin::BrandsController < Admin::AdminController
   def index
     @brands = Brand.order(:name)
   end
+
+  def show
+    @brand = Brand.find params[:id]
+  end
+
   def new
     @brand = Brand.new
   end
