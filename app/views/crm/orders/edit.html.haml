@@ -1,0 +1,9 @@
+= simple_form_for @order, url: crm_order_path(@order), html: {class: 'form-vertical'} do |f|
+
+
+  = f.input :username
+  = f.input :phone
+  = f.input :delivery_address
+
+  .form-actions
+    = f.submit 'Готово', class: 'btn'

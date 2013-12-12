@@ -4,15 +4,17 @@
     = '/'
   %li.active
     = "Заказ номер #{@order.id}"
+  %li{style: 'float: right;'}
+    %a.btn-small{href: edit_crm_order_path(@order)} Изменить
 
 
 .page-header
   %h2
     = "#{@order.username} - #{@order.phone}"
     %small
-
       %br
-      Казарменный переулок, дом 3, офис 1
+      = @order.delivery_address.gsub("\n", '<br/>').html_safe
+
 %legend Позиции к заказу
 
 %table.table
