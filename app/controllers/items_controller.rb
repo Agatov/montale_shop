@@ -1,7 +1,6 @@
 class ItemsController < ApplicationController
   def index
-
-
+    params[:brand_name] = 'montale' unless params[:brand_name]
     @brand = Brand.find_by_index params[:brand_name]
     @items = @brand.items.order('original_name')
 

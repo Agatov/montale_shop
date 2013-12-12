@@ -36,10 +36,10 @@
       -  @items.each do |item|
         .item
           .image
-            %a{href: "/montale/#{item.index}"}
+            %a{href: "/#{item.brand.index}/#{item.index}"}
               = image_tag item.image_url(:thumb)
           .info
-            %a.name{href: "/montale/#{item.index}"}
+            %a.name{href: "/#{item.brand.index}/#{item.index}"}
               = item.original_name
             .sex
               Унисекс
