@@ -1,5 +1,5 @@
 class Order < ActiveRecord::Base
-  attr_accessible :phone, :username
+  attr_accessible :phone, :username, :delivery_address, :delivery_time
 
 
   after_save :send_notification
