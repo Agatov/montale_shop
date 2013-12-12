@@ -5,4 +5,32 @@
   %li.active
     = "Заказ номер #{@order.id}"
 
+
+.page-header
+  %h2
+    = "#{@order.username} - #{@order.phone}"
+    %small
+
+      %br
+      Казарменный переулок, дом 3, офис 1
 %legend Позиции к заказу
+
+%table.table
+  %thead
+    %th Аромат
+    %th Объем
+    %th Цена
+    %th -
+  %tbody
+    - @order.prices.each do |price|
+      %tr
+        %td
+          = "#{price.item.brand.name} #{price.item.original_name}"
+          %br
+          %span{style: 'font-size: 12px;'}
+            = price.name
+        %td
+          = "#{price.volume} мл"
+        %td
+          = "#{price.price} руб"
+        %td -

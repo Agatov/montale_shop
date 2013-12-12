@@ -4,6 +4,9 @@ class Order < ActiveRecord::Base
 
   after_save :send_notification
 
+  has_many :order_prices
+  has_many :prices, through: :order_prices
+
 
   def send_notification
     phones = %w(79037928959 79057376916)

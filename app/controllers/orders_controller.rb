@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
     @order = Order.new params[:order]
 
     if @order.save
-      get_cart.volumes.each { |volume| OrderVolume.create(order_id: @order.id, volume_id: volume[:id]) }
+      get_cart.volumes.each { |volume| OrderPrice.create(order_id: @order.id, price_id: volume[:id]) }
       session[:cart] = nil
 
       render json: {status: :ok}

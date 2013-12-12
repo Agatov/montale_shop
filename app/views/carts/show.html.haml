@@ -5,7 +5,7 @@
       .header
         Ваша корзина
       %table.cart-list
-        - @volumes.each do |volume|
+        - @prices.each do |volume|
           %tr
             %td
               = "Montale #{volume.item.original_name}"
