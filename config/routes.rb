@@ -1,13 +1,15 @@
 Shop::Application.routes.draw do
 
-
-
   namespace :admin do
     resources :items do
       resources :prices
     end
 
     resources :brands
+  end
+
+  namespace :crm do
+    resources :orders
   end
 
   root to: 'items#index'

@@ -1,0 +1,24 @@
+%legend Заказы
+
+
+%table.table
+  %thead
+    %th #
+    %th Имя
+    %th Телефон
+    %th Статус
+    %th Дата
+    %th
+  %tbody
+    - @orders.each do |order|
+      %tr
+        %td
+          = order.id.to_s
+        %td
+          = order.username
+        %td
+          = order.phone
+        %td -
+        %td -
+        %td
+          = link_to 'Просмотреть', crm_order_path(order)

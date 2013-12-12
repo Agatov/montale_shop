@@ -1,0 +1,8 @@
+%ol.breadcrumb
+  %li
+    = link_to 'Все заказы', crm_orders_path
+    = '/'
+  %li.active
+    = "Заказ номер #{@order.id}"
+
+%legend Позиции к заказу
