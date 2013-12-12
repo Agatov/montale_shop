@@ -1,0 +1,10 @@
+= simple_form_for price, url: url, html: {class: 'form-vertical'} do |f|
+
+  = f.input :name
+  = f.input :volume
+  = f.input :price
+  = f.input :in_stock
+  = f.input :hidden
+  = f.input :item_id, as: :hidden
+  .form-actions
+    = f.submit 'Готово', class: 'btn'

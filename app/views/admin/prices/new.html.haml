@@ -1,0 +1,17 @@
+%ol.breadcrumb
+  %li
+    = link_to 'Все брэнды', admin_brands_path
+    = '/'
+  %li
+    = link_to @item.brand.name, admin_brand_path(@item.brand), class: :active
+    = '/'
+  %li.active
+    = @item.original_name
+    = '/'
+  %li
+    = link_to 'Цены', admin_item_prices_path(@item)
+    = '/'
+  %li.active
+    Добавление позиции
+
+= render partial: 'admin/prices/form', locals: {price: @price, url: admin_item_prices_path(@item)}

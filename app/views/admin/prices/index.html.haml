@@ -1,0 +1,46 @@
+%ol.breadcrumb
+  %li
+    = link_to 'Все брэнды', admin_brands_path
+    = '/'
+  %li
+    = link_to @item.brand.name, admin_brand_path(@item.brand), class: :active
+    = '/'
+  %li.active
+    = @item.original_name
+    = '/'
+  %li.active
+    Цены
+
+  %li{style: 'float: right;'}
+    %a.btn-small{href: new_admin_item_price_path(@item)} Добавить позицию
+
+
+%table.table
+  %thead
+    %th Название
+    %th Объем
+    %th Цена
+    %th На складе
+    %th Скрыто
+    %th
+  %tbody
+    - @item.prices.each do |price|
+      %tr
+        %td
+          = price.name
+        %td
+          = "#{price.volume} мл"
+        %td
+          = "#{price.price} руб."
+        %td
+          = price.in_stock? ? 'Да' : 'Нет'
+        %td
+          = price.hidden ? 'Да' : 'Нет'
+        %th
+          = link_to 'Изменить', edit_admin_item_price_path(@item.id, price)
+          = link_to 'Удалить', admin_item_price_path(@item.id, price), method: :delete, confirm: 'Удалить?'
+
+
+
+
+
