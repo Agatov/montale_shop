@@ -13,7 +13,7 @@ Shop::Application.routes.draw do
   end
 
   root to: 'items#index'
-  get '/montale', to: 'items#index'
+  get ':brand_name/', to: 'items#index'
   get ':brand_name/:item_name', to: 'items#show'
 
   resources :items, only: [:index, :show]

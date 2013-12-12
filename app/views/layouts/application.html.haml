@@ -9,23 +9,25 @@
     %title
       Montale
   %body
+
     #topbar
       .wrapper
         .left
-          %a{href: root_path}
-            = image_tag '/assets/montale_logo.jpg'
+          .logo-text
+            Пахну Вкусно
 
         .right
           .phone
             +7 (495) 792-89-59
 
-    .buffer
-    = render partial: 'carts/widget'
+    .container
+      .buffer
+      = render partial: 'carts/widget'
 
-    = yield
+      = yield
 
-    #footer
-      &copy; 2013
+      #footer
+        &copy; 2013
 
 
 

@@ -1,22 +1,13 @@
--#banner
+- if @brand
   .wrapper
-    .offer
-      Montale со скидкой 30% до
-      %span.red 19 августа
+    = image_tag "#{@brand.index}.jpg"
 
-    .about
-      Оставьте заявку, чтобы получить скидку 30% на всю линию ароматов Montale
-
-    .top-form
-      %input{type: :text, name: 'username', placeholder: 'Введите ваше имя'}
-      %input{type: :text, name: 'phone', placeholder: 'Введите ваш номер телефона'}
-      .button#order-button
-        Получить скидку 30%
 
 
 #catalog{name: 'catalog'}
   .catalog-header
-    Ароматы Montale
+    Ароматы
+    = @brand.name
 
 
   .wrapper

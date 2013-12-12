@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   def index
 
 
-    @brand = Brand.find_by_index params[:brand]
+    @brand = Brand.find_by_index params[:brand_name]
     @items = @brand.items.order('original_name')
 
     #if params[:family_id]

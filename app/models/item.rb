@@ -28,7 +28,7 @@ class Item < ActiveRecord::Base
 
 
   def create_index
-    self.index = self.original_name.downcase.grep(' ', '-').grep('&','-and-').grep('\'', '')
+    self.index = self.original_name.downcase.gsub(' ', '-').gsub('&','-and-').gsub('\'', '')
     self.save
   end
 end

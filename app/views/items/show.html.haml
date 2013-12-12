@@ -2,9 +2,8 @@
   #item
     .header
       .name
-        = link_to 'Все ароматы', root_path(anchor: 'catalog')
-        = '/'
-        Montale
+        %a{href: "/#{@item.brand.index}"} Ароматы #{@item.brand.name}
+        = ' / '
         = @item.original_name
       .sex
         Унисекс
