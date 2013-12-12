@@ -12,9 +12,6 @@ Shop::Application.routes.draw do
     resources :orders
   end
 
-  root to: 'items#index'
-  get ':brand_name/', to: 'items#index'
-  get ':brand_name/:item_name', to: 'items#show'
 
   resources :items, only: [:index, :show]
 
@@ -26,4 +23,10 @@ Shop::Application.routes.draw do
   resource :orders, only: :create do
     post :fast, on: :collection
   end
+
+  root to: 'items#index'
+  get ':brand_name/', to: 'items#index'
+  get ':brand_name/:item_name', to: 'items#show'
+
+
 end

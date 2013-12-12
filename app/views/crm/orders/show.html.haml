@@ -13,7 +13,7 @@
     = "#{@order.username} - #{@order.phone}"
     %small
       %br
-      = @order.delivery_address.gsub("\n", '<br/>').html_safe
+      = @order.delivery_address.gsub("\n", '<br/>').html_safe if @order.delivery_address?
 
 %legend Позиции к заказу
 
