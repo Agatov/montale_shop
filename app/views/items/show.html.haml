@@ -61,21 +61,21 @@
       .header
         Цены на этот аромат
       %table
-        - @item.volumes.each do |volume|
+        - @item.prices.each do |price|
           %tr
             %td
-              = "Montale #{@item.original_name}"
-              парфюмированная вода
+              = "#{@item.brand.name} #{@item.original_name}"
+              = price.name
 
             %td.volume
-              = "#{volume.volume.to_s} мл"
+              = "#{price.volume.to_s} мл"
 
 
             %td.price
-              = "#{volume.price.to_s},00 рублей"
+              = "#{price.price.to_s},00 рублей"
 
             %td.button
-              .add-to-cart{volume_id: volume.id}
+              .add-to-cart{volume_id: price.id}
                 В Корзину
 
     .fast-order

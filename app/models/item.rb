@@ -3,10 +3,9 @@ class Item < ActiveRecord::Base
   attr_accessible :family_id, :top_notes, :middle_notes, :lower_notes
   attr_accessible :index
 
-  has_many :volumes
+  has_many :prices
   belongs_to :family
   belongs_to :brand
-  after_create :create_default_volumes
   after_create :create_index
 
   as_enum :sex, [:unisex, :male, :female], prefix: true
