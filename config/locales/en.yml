@@ -4,8 +4,13 @@
 en:
   hello: "Hello world"
 
-  email:
-    title: 'Новая заявка'
+  project:
+    new-order-title: "Новая заявка %{date}"
+    fast-order-title: "Новая быстрая заявка %{date}"
+    link-to-item: "http://пахнувкусно.рф/%{brand_name}/%{item_name}"
+
+
+
 
 
   crm:

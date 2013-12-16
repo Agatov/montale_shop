@@ -6,6 +6,8 @@ $ ->
       $('#cart').text($(data).html())
       $('#cart').show()
 
+      reachGoal 'item-added-to-cart'
+
 
   $('.remove-from-cart').bind 'click', ->
     $.post '/cart/remove', {'volume_id': $(@).attr('volume_id')}, (data) =>

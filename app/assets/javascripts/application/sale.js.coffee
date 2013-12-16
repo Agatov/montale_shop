@@ -27,6 +27,8 @@ $ ->
 
 
 
+
+
     $('.modal-overlay').bind 'click', ->
       hide_thank_you()
 
@@ -42,6 +44,8 @@ $ ->
     $('#cart').hide()
     $('#cart-list').hide()
     $('#cart-empty').show()
+
+    reachGoal 'new-order'
 
     false
 
@@ -87,3 +91,6 @@ window.hide_thank_you = ->
       $('.modal-overlay').hide()
 
 
+
+window.reachGoal = (goal) ->
+  yaCounter23389516.reachGoal goal

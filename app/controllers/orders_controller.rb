@@ -15,7 +15,7 @@ class OrdersController < ApplicationController
 
       Pony.mail ({
           to: 'montalemsk@gmail.com, abardacha@gmail.com, kostyadt@gmail.com',
-          subject: I18n.t('email.title', locale: 'en'),
+          subject: I18n.t('project.new-order-title', locale: 'en', date: @order.date),
           body: message,
           via: :smtp,
           via_options: {
@@ -37,23 +37,24 @@ class OrdersController < ApplicationController
   def fast
     @item = Item.find params[:item_id]
 
-    phones = %w(79037928959 79057376916)
+    message = "#{params[:phone]}"
+    message += "\n"
+    message += I18n.t('project.link-to-item', locale: 'en', brand_name: @item.brand.name, item_name: @item.index)
 
-    message = "#{params[:phone]}. #{@item.original_name}"
-
-    phones.each do |phone|
-      HTTParty.get(
-          'http://api.sms24x7.ru',
-          query: {
-              method: 'push_msg',
-              email: 'agatovs@gmail.com',
-              password: 'avv6rqE',
-              phone: phone.to_s,
-              text: message,
-              sender_name: 'montaleshop'
-          }
-      )
-    end
+    Pony.mail ({
+        to: 'montalemsk@gmail.com, abardacha@gmail.com, kostyadt@gmail.com',
+        subject: I18n.t('project.fast-order-title', locale: 'en', date: Russian::strftime(Time.now, "%d %B %H:%M")),
+        body: message,
+        via: :smtp,
+        via_options: {
+            address: 'smtp.gmail.com',
+            port: 587,
+            enable_starttls_auto: true,
+            user_name: 'montalemsk',
+            password: 'kotkotkot232323',
+            authentication: :plain
+        }
+    })
 
     render json: {status: :ok}
   end

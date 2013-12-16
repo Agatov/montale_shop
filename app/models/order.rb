@@ -27,4 +27,9 @@ class Order < ActiveRecord::Base
       )
     end
   end
+
+
+  def date
+    Russian::strftime(created_at, "%d %B %H:%M")
+  end
 end
