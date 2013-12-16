@@ -4,6 +4,14 @@
 en:
   hello: "Hello world"
 
+  email:
+    title: 'Новая заявка'
+
+
+  crm:
+    order:
+      link: "http://пахнувкусно.рф/crm/orders/%{id}"
+
 
   activerecord:
     enums:

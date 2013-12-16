@@ -64,7 +64,9 @@
           %tr
             %td
               = "#{@item.brand.name} #{@item.original_name}"
-              = price.name
+              %br
+              %small
+                = price.name
 
             %td.volume
               = "#{price.volume.to_s} мл"

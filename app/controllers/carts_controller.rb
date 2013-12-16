@@ -30,6 +30,8 @@ class CartsController < ApplicationController
     @cart.remove @price
     set_cart @cart
 
-    render partial: 'carts/widget'
+    redirect_to :back
+
+    #render partial: 'carts/widget'
   end
 end

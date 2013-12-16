@@ -9,7 +9,9 @@
           %tr
             %td
               = "Montale #{volume.item.original_name}"
-              парфюмированная вода
+              %br
+              %small
+                = volume.name
 
             %td.volume
               = "#{volume.volume.to_s} мл"
@@ -23,8 +25,8 @@
               = "#{get_cart.find_volume(volume)[:summ].to_s},00 рублей"
 
             %td.button
-              .remove-from-cart{volume_id: volume.id}
-                Удалить
+              -#%a.remove-from-cart{href: '', volume_id: volume.id} Удалить
+              = link_to 'Удалить', remove_cart_path(volume_id: volume.id), class: 'remove-from-cart'
 
         %tr.last
           %td{style: 'text-align: right'}

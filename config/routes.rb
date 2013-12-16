@@ -17,7 +17,7 @@ Shop::Application.routes.draw do
 
   resource :cart, only: [:show, :create] do
     get :clear, on: :collection
-    post :remove, on: :collection
+    get :remove, on: :collection
   end
 
   resource :orders, only: :create do

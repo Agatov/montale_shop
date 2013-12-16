@@ -3,12 +3,30 @@ class OrdersController < ApplicationController
   protect_from_forgery :except => :create
 
   def create
-
     @order = Order.new params[:order]
 
     if @order.save
       get_cart.volumes.each { |volume| OrderPrice.create(order_id: @order.id, price_id: volume[:id]) }
       session[:cart] = nil
+
+      message = "#{params[:order][:username]}. #{params[:order][:phone]}"
+      message += "\n"
+      message += I18n.t('crm.order.link', locale: 'en', id: @order.id.to_s)
+
+      Pony.mail ({
+          to: 'montalemsk@gmail.com, abardacha@gmail.com, kostyadt@gmail.com',
+          subject: I18n.t('email.title', locale: 'en'),
+          body: message,
+          via: :smtp,
+          via_options: {
+              address: 'smtp.gmail.com',
+              port: 587,
+              enable_starttls_auto: true,
+              user_name: 'montalemsk',
+              password: 'kotkotkot232323',
+              authentication: :plain
+          }
+      })
 
       render json: {status: :ok}
     else
