@@ -41,7 +41,7 @@
         .item
           .image
             %a{href: "/#{item.brand.index}/#{item.index}"}
-              = image_tag item.image_url(:thumb)
+              = image_tag item.image_url(:thumb) if item.image?
           .info
             %a.name{href: "/#{item.brand.index}/#{item.index}"}
               = item.original_name
