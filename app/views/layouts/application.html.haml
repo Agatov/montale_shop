@@ -20,6 +20,16 @@
           .phone
             +7 (495) 792-89-59
 
+    - if params[:brand_name]
+      - case params[:brand_name]
+        - when 'montale'
+          = image_tag 'montale2.jpg', style: 'margin: 0px auto; display: block;'
+        - when 'serge-lutens'
+          = image_tag 'serge-lutens2.jpg', style: 'margin: 0px auto; display: block;'
+
+
+
+
     .container
       .buffer
 
