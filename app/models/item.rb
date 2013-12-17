@@ -7,6 +7,7 @@ class Item < ActiveRecord::Base
   belongs_to :family
   belongs_to :brand
   after_create :create_index
+  after_update :create_index
 
   as_enum :sex, [:unisex, :male, :female], prefix: true
   mount_uploader :image, ItemImageUploader
