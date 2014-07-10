@@ -1,5 +1,5 @@
 class Item < ActiveRecord::Base
-  attr_accessible :about, :brand_id, :hidden, :image, :in_stock, :original_name, :price, :russian_name, :sex_cd, :sex
+  attr_accessible :about, :brand_id, :hidden, :image, :preview, :in_stock, :original_name, :price, :russian_name, :sex_cd, :sex
   attr_accessible :family_id, :top_notes, :middle_notes, :lower_notes
   attr_accessible :index
 
@@ -10,6 +10,7 @@ class Item < ActiveRecord::Base
 
   as_enum :sex, [:unisex, :male, :female], prefix: true
   mount_uploader :image, ItemImageUploader
+  mount_uploader :preview, ItemPreviewUploader
 
 
 

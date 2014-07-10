@@ -1,43 +1,25 @@
-#catalog{name: 'catalog'}
-  .catalog-header
-    Ароматы
+
+.title-bar
+  %h1
     = @brand.name
+  .sale-info
+    Дарим 700 рублей
+    %br
+    при первой покупке любого аромата
+    %br
+    = @brand.name
+    в нашем магазине
 
 
-  .wrapper
-    .catalog-filter
-      Выберите семейство ароматов:
 
-      %ul.families
-        %li
-          - if params[:family_id]
-            - class_value = ''
-          - else
-            - class_value = 'selected'
-          -#= link_to 'Все', root_path(anchor: 'catalog'), class: class_value
-          %a{href: "/#{params[:brand_name]}", class: class_value} Все
-
-        - Family.order(:id).each do |family|
-          %li
-            - if params[:family_id]
-              - if params[:family_id] == family.id.to_s
-                - class_value = 'selected'
-              - else
-                - class_value = ''
-            - else
-              - class_value = ''
-
-            -#= link_to family.name, root_path(family_id: family.id, anchor: 'catalog'), class: class_value
-            %a{href: "/#{params[:brand_name]}?family_id=#{family.id.to_s}", class: class_value}
-              = family.name
-    .items
-      -  @items.each do |item|
-        .item
-          .image
-            %a{href: "/#{item.brand.index}/#{item.index}"}
-              = image_tag item.image_url(:thumb) if item.image?
-          .info
-            %a.name{href: "/#{item.brand.index}/#{item.index}"}
-              = item.original_name
-            .sex
-              Унисекс
+.items
+  -  @items.each do |item|
+    .item
+      .image
+        %a{href: "/#{item.brand.index}/#{item.index}"}
+          = image_tag item.preview_url(:thumb) if item.preview?
+      .info
+        %a.name{href: "/#{item.brand.index}/#{item.index}"}
+          = item.original_name
+        .sex
+          Унисекс

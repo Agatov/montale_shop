@@ -1,97 +1,97 @@
-.wrapper
-  #item
-    .header
-      .name
-        %a{href: "/#{@item.brand.index}"} Ароматы #{@item.brand.name}
-        = ' / '
-        = @item.original_name
-      .sex
-        Унисекс
+.title-bar
+  %h1
+    %a{href: "/#{@item.brand.index}"}= @item.brand.name
+    = '—'
+    = @item.original_name
 
-    .info
-      .left
-        = image_tag @item.image_url(:mini)
+#item
+  .info
+    .item-image
+      = image_tag @item.image_url(:mini)
 
-        .order-by-phone
-          %span.label Заказать по телефону
+    .item-about
+      = @item.about.gsub(/\n/, '<br />').html_safe
+
+      -#.perfume-aromate
+        .aromate
+          %span Верхние ноты
           %br
-          %span.phone-number +7 (965) 394 90 73
+          = @item.top_notes
+        .aromate
+          %span Средние ноты
+          %br
+          = @item.middle_notes
+        .aromate.last
+          %span Нижние ноты
+          %br
+          = @item.lower_notes
 
-      .right
-        = @item.about.gsub(/\n/, '<br />').html_safe
-
-
-
-
-
-        .perfume-aromate
-          .aromate
-            %span Верхние ноты
-            %br
-            = @item.top_notes
-          .aromate
-            %span Средние ноты
-            %br
-            = @item.middle_notes
-          .aromate.last
-            %span Нижние ноты
-            %br
-            = @item.lower_notes
-
-
-    .volumes-grid
-      .header
-        Цены на этот аромат
-      %table
-        - @item.prices.each do |price|
-          %tr
-            %td
-              = "#{@item.brand.name} #{@item.original_name}"
-              %br
-              %small
-                = price.name
-
-            %td.volume
-              = "#{price.volume.to_s} мл"
-
-
-            %td.price
-              = "#{price.price.to_s},00 рублей"
-
-            %td.button
-              .add-to-cart{volume_id: price.id, style: 'float: right;'}
-                В Корзину
-
-
-
-    .triggers
-      .trigger
-        %span 100% гарантия
-        %br
-        Если в течении трех дней вам показалось что духи пахнут не должным образом мы вернем вам 100% от стоимости духов
-      .trigger
-        %span Быстрая доставка
-        %br
-        Мы доставим вам ваш товар уже на следующий день
-      .trigger
-        %span 24 часа в сутки
-        %br
-        В нашем интернет магазине у вас есть возможность сделать заказ в любое время дня и ночи.
-      .trigger.last
-        %span 100% оригинал
-        %br
-        Вы можете сравнить покупку с духами, продающимися в бутиках, и убедиться что вы купили оригинал.
-
-    .fast-order
-      .header
+    .item-fast-order
+      .title
         Заказ в один клик
+      .tips
+        Оставьте ваш номер телефона, и в течение 15 минут
+        с вами свяжется наш менеджер, выяснит все подробности
+        и сам оформит заказ на ваше имя.
 
-      .left
-        .about-fast-order
-          Менеджер перезвонит вам, узнает все детали и сам оформит заказ на ваше имя.
-      .right
-        .fast-order-form
-          %input{type: :text, name: :fast_phone, placeholder: 'Введите ваш номер телефона'}
-          %button#fast-order-button{type: :text, name: :phone, placeholder: 'Введите ваш номер телефона', item_id: @item.id}
-            Заказать
+      %input{type: :text, placeholder: '(903) 777-77-77'}
+      .button
+        Перезвоните мне
+
+
+  .volumes-grid
+    .header
+      Цены на этот аромат
+    %table
+      - @item.prices.each do |price|
+        %tr
+          %td
+            = "#{@item.brand.name} #{@item.original_name}"
+            %br
+            %small
+              = price.name
+
+          %td.volume
+            = "#{price.volume.to_s} мл"
+
+
+          %td.price
+            = "#{price.price.to_s},00 рублей"
+
+          %td.button
+            .add-to-cart{volume_id: price.id, style: 'float: right;'}
+              В Корзину
+
+
+
+  .triggers
+    .trigger
+      %span 100% гарантия
+      %br
+      Если в течении трех дней вам показалось что духи пахнут не должным образом мы вернем вам 100% от стоимости духов
+    .trigger
+      %span Быстрая доставка
+      %br
+      Мы доставим вам ваш товар уже на следующий день
+    .trigger
+      %span 24 часа в сутки
+      %br
+      В нашем интернет магазине у вас есть возможность сделать заказ в любое время дня и ночи.
+    .trigger.last
+      %span 100% оригинал
+      %br
+      Вы можете сравнить покупку с духами, продающимися в бутиках, и убедиться что вы купили оригинал.
+
+  -#.fast-order
+    .header
+      Заказ в один клик
+
+    .left
+      .about-fast-order
+        Менеджер перезвонит вам, узнает все детали и сам оформит заказ на ваше имя.
+    .right
+      .fast-order-form
+        %input{type: :text, name: :fast_phone, placeholder: 'Введите ваш номер телефона'}
+        %button#fast-order-button{type: :text, name: :phone, placeholder: 'Введите ваш номер телефона', item_id: @item.id}
+          Заказать
 

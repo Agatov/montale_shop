@@ -1,0 +1,32 @@
+-#catalog{name: 'catalog'}
+  .catalog-header
+    Ароматы
+    = @brand.name
+
+
+  .wrapper
+    .catalog-filter
+      Выберите семейство ароматов:
+
+      %ul.families
+        %li
+          - if params[:family_id]
+            - class_value = ''
+          - else
+            - class_value = 'selected'
+          -#= link_to 'Все', root_path(anchor: 'catalog'), class: class_value
+          %a{href: "/#{params[:brand_name]}", class: class_value} Все
+
+        - Family.order(:id).each do |family|
+          %li
+            - if params[:family_id]
+              - if params[:family_id] == family.id.to_s
+                - class_value = 'selected'
+              - else
+                - class_value = ''
+            - else
+              - class_value = ''
+
+            -#= link_to family.name, root_path(family_id: family.id, anchor: 'catalog'), class: class_value
+            %a{href: "/#{params[:brand_name]}?family_id=#{family.id.to_s}", class: class_value}
+              = family.name

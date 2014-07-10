@@ -14,20 +14,35 @@
       .wrapper
         .left
           %a{href: root_path}
-            = image_tag 'logo2.png', width: 260
+            = image_tag 'logo.jpg', width: 206
 
         .right
           .phone
-            +7 (965) 394 90 73
-
-    - if params[:brand_name]
-      - case params[:brand_name]
-        - when 'montale'
-          = image_tag 'montale2.jpg', style: 'margin: 0px auto; display: block;'
-        - when 'serge-lutens'
-          = image_tag 'serge-lutens2.jpg', style: 'margin: 0px auto; display: block;'
+            (495) 792-89-59
+            .small
+              Круглосуточно. Без выходных.
 
 
+
+    .wrapper
+      %ul.brands-navigation
+        %li
+          %a{href: '#'} Amouage
+
+        %li
+          %a{href: '#'} Jo Malone
+
+        %li
+          %a{href: '#'} Kilian
+
+        %li
+          %a{href: '#'} Tom Ford
+
+        %li
+          %a{href: '#'} Montale
+
+        %li.active
+          %a{href: '#'} Serge Lutens
 
 
     .container
@@ -36,7 +51,7 @@
 
       = yield
 
-      #footer
+      -##footer
         &copy; 2013
 
     .modal-overlay

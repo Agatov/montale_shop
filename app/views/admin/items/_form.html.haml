@@ -13,6 +13,8 @@
   = f.input :lower_notes
   = f.input :image
   = image_tag item.image_url(:thumb) if item.image?
+  = f.input :preview
+  = image_tag item.preview_url(:thumb) if item.preview?
   = f.input :in_stock
   = f.input :hidden
   .form-actions
