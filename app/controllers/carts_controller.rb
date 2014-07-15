@@ -17,6 +17,14 @@ class CartsController < ApplicationController
     render partial: 'carts/widget'
   end
 
+  def order_form
+
+  end
+
+  def thank
+
+  end
+
 
   def clear
     session[:cart] = nil

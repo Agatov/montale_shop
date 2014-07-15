@@ -26,6 +26,18 @@
 
     .wrapper
       %ul.brands-navigation
+        - Brand.order(:name).each do |brand|
+
+          - html_class = ''
+          - if params[:brand_name]
+            - if params[:brand_name] == brand.index
+              - html_class = 'active'
+
+          %li{class: html_class}
+            %a{href: "/#{brand.index}"}
+              = brand.name
+
+      -#%ul
         %li
           %a{href: '#'} Amouage
 

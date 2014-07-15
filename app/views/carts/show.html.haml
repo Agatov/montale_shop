@@ -26,7 +26,7 @@
 
             %td.button
               -#%a.remove-from-cart{href: '', volume_id: volume.id} Удалить
-              = link_to 'Удалить', remove_cart_path(volume_id: volume.id), class: 'remove-from-cart'
+              = link_to 'x', remove_cart_path(volume_id: volume.id), class: 'remove-from-cart'
 
         %tr.last
           %td{style: 'text-align: right'}
@@ -41,7 +41,7 @@
 
       .buttons
 
-        .make-order#make-order
+        %a.make-order{href: '/cart/order_form'}
           Оформить заказ
 
 - if get_cart.count > 0
@@ -54,4 +54,9 @@
 
     .wrapper
       .header
-        Ваша Корзина Пуста
+        Ваша корзина
+      .empty-cart
+        Ваша корзина пуста
+        %br
+        %br
+        = link_to 'Вернуться на главную страницу', root_path

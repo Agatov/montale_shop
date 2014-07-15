@@ -1,10 +1,19 @@
+$font_color: #3D464D
+$link_color: #2E95BB
+$blue_color: #2E95BB
+$red_color: #D84634
+$red_light_color: #ef4e35
+$green_color: #2ecc71
+
 #cart
   width: 100%
-  height: 30px
-  line-height: 30px
+  height: 50px
+  line-height: 50px
   position: fixed
-  background: #f46b49
+  background: $blue_color
+  opacity: 0.8
   cursor: pointer
+  font-family: 'Roboto-Light'
   font-size: 14px
 
   text-align: center
@@ -29,15 +38,13 @@
     margin-top: 25px
 
     tr
-      height: 60px
-      background: #fafafa
+      height: 80px
       &:nth-child(2n)
-        background: #f0f0f0
-      &.last
-        background: #fff
+        background: #f2f2f2
 
       td
-        padding: 15px 10px
+        padding: 0px 10px
+        vertical-align: middle
 
         &.price
           width: 200px
@@ -46,26 +53,24 @@
 
         &.volume
           width: 130px
+          font-family: 'Roboto-Light'
 
         .remove-from-cart
           display: block
           text-decoration: none
-          background: #be1e2a
-          text-shadow: 0 1px 0 #be1e2a
-          width: 90px
-          height: 20px
-          line-height: 20px
+          background: $red_color
+          width: 50px
+          height: 50px
+          line-height: 50px
+          font-family: 'Roboto-Light'
+          font-size: 24px
           color: #fff
-          font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif
-          font-size: 14px
           text-align: center
           -webkit-transition: all, 0.15s
-          border-radius: 3px
           cursor: pointer
-          margin-top: 15px
 
           &:hover
-            background: #173068
+            background: $red_light_color
 
 
 .buttons
@@ -84,7 +89,6 @@
     font-size: 18px
     text-align: center
     -webkit-transition: all, 0.15s
-    border-radius: 3px
     cursor: pointer
 
     &:hover
@@ -92,23 +96,24 @@
 
 
   .make-order
+    display: block
+    text-decoration: none
     float: right
     margin-left: 30px
-    background: #7bc674
-    text-shadow: 0 1px 0 #7bc674
+    background: $blue_color
     width: 200px
     height: 45px
     line-height: 45px
     color: #fff
-    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif
+    font-family: 'Roboto-Light'
+    text-transform: uppercase
     font-size: 18px
     text-align: center
     -webkit-transition: all, 0.15s
-    border-radius: 3px
     cursor: pointer
 
     &:hover
-      background: #fdb255
+      background: $green_color
 
 
 #cart-empty
@@ -121,3 +126,56 @@
     line-height: 50px
     font-size: 32px
     font-weight: 200
+
+  .empty-cart
+    padding-top: 50px
+
+
+
+
+#cart-order-form
+
+  .left
+    float: left
+    width: 500px
+
+
+    .tips
+      width: 400px
+      font-family: 'Roboto-Light'
+      padding: 20px 0
+      font-size: 16px
+      line-height: 1.4
+      color: $font_color
+
+
+    form
+      display: block
+      padding-top: 30px
+
+      input
+        width: 400px
+        height: 60px
+        border: 1px solid #ccc
+
+        font-family: 'Roboto-Regular'
+        font-size: 24px
+        color: $font_color
+        padding: 0px 15px
+        margin-bottom: 20px
+
+      input[type=submit]
+        width: 432px
+        background: $blue_color
+        color: #fff
+        font-family: 'Roboto-Light'
+        font-size: 18px
+        text-transform: uppercase
+
+
+  .right
+    padding: 20px
+    float: right
+    width: 300px
+    background: #fafafa
+

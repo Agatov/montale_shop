@@ -1,0 +1,26 @@
+.title-bar
+  %h1
+    = link_to 'Корзина', cart_path
+    = '—'
+    Оформление заказа
+
+#cart-order-form
+
+  .left
+    .tips
+      Введите ваше имя и номер телефона в форму ниже.
+      В течение 15 минут с вами свяжется наш менеджер
+      и оформит доставку на следующий день
+
+
+      %form{method: :post, action: '/orders'}
+        %input{type: :text, name: 'order[username]', placeholder: 'Введите ваше имя'}
+        %input{type: :text, name: 'order[phone]', placeholder: 'Введите ваш номер телефона'}
+        %input{type: :submit, value: 'Оформить заказ'}
+
+  .right
+    %h3
+      Условия доставки
+    %p
+      Мы бесплатно доставляем товары в пределах МКАД на следующий
+      день после заказа.

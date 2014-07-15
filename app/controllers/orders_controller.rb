@@ -14,7 +14,7 @@ class OrdersController < ApplicationController
       message += I18n.t('crm.order.link', locale: 'en', id: @order.id.to_s)
 
       Pony.mail ({
-          to: 'montalemsk@gmail.com, abardacha@gmail.com, kostyadt@gmail.com',
+          to: 'montalemsk@gmail.com, abardacha@gmail.com',
           subject: I18n.t('project.new-order-title', locale: 'en', date: @order.date),
           body: message,
           via: :smtp,
@@ -27,11 +27,9 @@ class OrdersController < ApplicationController
               authentication: :plain
           }
       })
-
-      render json: {status: :ok}
-    else
-      render json: {status: :error}
     end
+
+    redirect_to '/cart/thank'
   end
 
   def fast

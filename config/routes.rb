@@ -18,6 +18,8 @@ Shop::Application.routes.draw do
   resource :cart, only: [:show, :create] do
     get :clear, on: :collection
     get :remove, on: :collection
+    get :order_form, on: :collection
+    get :thank, on: :collection
   end
 
   resource :orders, only: :create do
