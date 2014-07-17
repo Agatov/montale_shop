@@ -4,9 +4,9 @@ class ItemsController < ApplicationController
     @brand = Brand.find_by_index params[:brand_name]
 
     if params[:family_id]
-      @items = @brand.items.where(family_id: params[:family_id]).order('original_name')
+      @items = @brand.items.where(family_id: params[:family_id], hidden: false).order('original_name')
     else
-      @items = @brand.items.order('original_name')
+      @items = @brand.items.where(hidden: false).order('original_name')
     end
 
   end
