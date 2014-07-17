@@ -63,33 +63,7 @@
 
       = yield
 
-      -##footer
-        &copy; 2013
-
-    .modal-overlay
-    .modal-thank-you
-      .header
-        Спасибо!
-      .body
-        Мы вам позвоним в течение 5 минут
-
-
-        %a{href: '/montale'}
-          Я буду ждать!
-
-    .modal-dialog
-      .header
-        Оформление заказа
-      .body
-        .to-do
-          Чтобы оформить заказ, оставьте ваши контактные данные. Мы свяжемся с вами в течение 5 минут.
-        .form
-          %input{type: :text, name: :username, placeholder: 'Введите ваше имя'}
-          %input{type: :text, name: :phone, placeholder: 'Введите ваш телефон'}
-          %button#order-button
-            Оформить заказ
-
-        .after
-          Ваши контактные данные в безопасности и не будут переданы третьим лицам.
+      #footer
+        &copy; 2013-2014
 
     = render partial: 'layouts/metrika'

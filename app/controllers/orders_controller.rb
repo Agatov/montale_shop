@@ -40,7 +40,7 @@ class OrdersController < ApplicationController
     message += I18n.t('project.link-to-item', locale: 'en', brand_name: @item.brand.name, item_name: @item.index)
 
     Pony.mail ({
-        to: 'montalemsk@gmail.com, abardacha@gmail.com, kostyadt@gmail.com',
+        to: 'montalemsk@gmail.com, abardacha@gmail.com',
         subject: I18n.t('project.fast-order-title', locale: 'en', date: Russian::strftime(Time.now, "%d %B %H:%M")),
         body: message,
         via: :smtp,
